@@ -9,7 +9,7 @@ ${BROWSER}                      chrome
 ${username}                     majimenez+common@copado.com.deva
 ${login_url}                    https://copado-8f--deva.sandbox.lightning.force.com/lightning/page/home             # Salesforce instance. NOTE: Should be overwritten in CRT variables
 ${home_url}                     ${login_url}/lightning/page/home
-${BASE_IMAGE_PATH}              ${CURDIR}${/}..${/}resources${/}images
+${BASE_IMAGE_PATH}              ../resources/images/
 
 
 *** Keywords ***
