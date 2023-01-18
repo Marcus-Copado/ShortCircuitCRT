@@ -13,5 +13,5 @@ Verify BearTracking
     Login
     TypeText      Search for bears            oxsana\n
     SetConfig     LogMatchedIcons             True        # Log matched image to logsß
-    VerifyIcon    ${CURDIR}/../resources/images/map_pin_icon.png
+    VerifyIcon    /home/services/suite/resources/images/map_pin_icon.png
     TypeText      Search for bears            baloo\n
