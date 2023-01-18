@@ -14,5 +14,5 @@ Verify BearTracking
     TypeText      Search for bears            oxsana\n
     SetConfig     LogMatchedIcons             True        # Log matched image to logsß
     #QVision.VerifyIcon                       ${BASE_IMAGE_PATH}/bear.png
-    VerifyIcon    bear
+    VerifyIcon    bear                        template_res_w=1920
     TypeText      Search for bears            baloo\n
