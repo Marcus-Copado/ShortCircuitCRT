@@ -2,17 +2,31 @@
 # before running this suite.
 
 *** Settings ***
-Resource          ../resources/common.robot
-Suite Setup       Setup Browser
-Suite Teardown    End suite
-Library           QVision
+Library                DataDriver                  reader_class=TestDataApi    name=bear.csv
+Resource               ../resources/common.robot
+Suite Setup            Setup Browser
+Suite Teardown         End suite
+Library                QVision
+Test Template          Check Bears
 
 
 *** Test Cases ***
-Verify BearTracking
-    Login
-    TypeText      Search for bears            oxsana\n
-    SetConfig     LogMatchedIcons             True        # Log matched image to logsß
-    #QVision.VerifyIcon                       ${BASE_IMAGE_PATH}/bear.png
-    VerifyIcon    bear                        template_res_w=1920
-    TypeText      Search for bears            baloo\n
+Check Bears with ${name} ${gender}
+
+*** Keywords ***
+Check Bears
+    [Arguments]        ${name}                     ${gender}
+    ${itsthere}        IsNoText                    View Profile
+    Run Keyword If     ${itsthere}                 Login to sandbox
+    VerifyText         Map
+    VerifyText         Satellite
+    VerifyText         D520                        timeout=5
+    TypeText           Search for bears            ${name}\n
+    VerifyText         ${name}                     anchor=${gender}
+
+Login to sandbox
+    [Documentation]    Login to Salesforce instance
+    GoTo               ${login_url}
+    TypeText           Username                    ${username}                 delay=1
+    TypeText           Password                    ${mo_password}
+    ClickText          Log In
