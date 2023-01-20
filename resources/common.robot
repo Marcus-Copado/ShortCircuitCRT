@@ -18,6 +18,7 @@ Setup Browser
     # if you need to use multiple libraries containing keywords with duplicate names
     Set Library Search Order    QForce                      QWeb
     Open Browser                about:blank                 ${BROWSER}
+    GoTo                        ${login_url}
     SetConfig                   LineBreak                   ${EMPTY}                    #\ue000
     SetConfig                   DefaultTimeout              20s                         #sometimes salesforce is slow
     Evaluate                    random.seed()               random                      # initialize random generator
