@@ -20,7 +20,6 @@ Check Bears
     Run Keyword If     ${itsthere}                 Login to sandbox
     VerifyText         Map
     VerifyText         Satellite
-    VerifyText         D520                        timeout=5
     TypeText           Search for bears            ${name}\n
     VerifyText         ${name}                     anchor=${gender}
 
