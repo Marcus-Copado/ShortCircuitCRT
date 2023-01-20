@@ -16,7 +16,6 @@ Check Bears with ${name} ${gender}
 *** Keywords ***
 Check Bears
     [Arguments]        ${name}                     ${gender}
-    GoTo               ${login_url}
     ${itsthere}        IsNoText                    View Profile
     Run Keyword If     ${itsthere}                 Login to sandbox
     VerifyText         Map
