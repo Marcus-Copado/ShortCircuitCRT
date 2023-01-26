@@ -14,4 +14,4 @@ Check Bears
     VerifyText         Map
     VerifyText         Satellite
     TypeText           Search for bears            Winnie\n
-    HotKey             Wn=
+    VerifyIcon         winniebear
