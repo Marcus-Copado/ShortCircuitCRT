@@ -14,5 +14,5 @@ Check Bears
     VerifyText            Map
     VerifyText            Satellite
     TypeText              Search for bears            Winnie\n
-    VerifyIcon            winniebear
+    VerifyIcon            image
     QVision.VerifyIcon    winniebear
