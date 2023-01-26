@@ -2,16 +2,17 @@
 # before running this suite.
 
 *** Settings ***
-Resource               ../resources/common.robot
-Suite Setup            Setup Browser
-Suite Teardown         End suite
-Library                QVision
+Resource                  ../resources/common.robot
+Suite Setup               Setup Browser
+Suite Teardown            End suite
+Library                   QVision
 
 
 *** Test Cases ***
 Check Bears
     Home
-    VerifyText         Map
-    VerifyText         Satellite
-    TypeText           Search for bears            Winnie\n
-    VerifyIcon         winniebear
+    VerifyText            Map
+    VerifyText            Satellite
+    TypeText              Search for bears            Winnie\n
+    VerifyIcon            winniebear
+    QVision.VerifyIcon    winniebear
